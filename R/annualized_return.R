@@ -9,6 +9,6 @@
 #' @examples
 annualize_returns <- function(x, periods){
   compounded_growth <- prod(1 + x)
-  n_periods <- nrow(x)
+  n_periods <- nrow(as.data.frame(x))
   return(compounded_growth ** (periods / n_periods) - 1)
 }
